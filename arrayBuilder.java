@@ -9,6 +9,7 @@ public class arrayBuilder {
     private int sum = 0;
     private int count = 0;
 
+    // Constructor that prints output
     public arrayBuilder() {
         buildInitialArray();
         System.out.println("Initial Array: ");
@@ -27,6 +28,7 @@ public class arrayBuilder {
         colSum(array);
     }
 
+    // Builds array based on user input
     public void buildInitialArray() {
         System.out.print("How many rows do you want the array to have?: ");
         rows = numberScanner.nextInt();
@@ -35,6 +37,7 @@ public class arrayBuilder {
         array = new int[rows][columns];
     }
 
+    // Fills array with random numbers
     public void buildArray1(int[][] array) {
         for (int row = 0; row < array.length; row++) {
             for (int col = 0; col < array[row].length; col++) {
@@ -43,6 +46,7 @@ public class arrayBuilder {
         }
     }
 
+    // Uses enhanced nested loops to print array
     public void printArray(int[][] array) {
         for (int[] row : array) {
             for (int thing : row) {
@@ -52,6 +56,7 @@ public class arrayBuilder {
         }
     }
 
+    // Calculates and prints sum of each row
     public void rowSum(int[][] array) {
         for (int[] x : array) {
             int total = 0;
@@ -63,6 +68,7 @@ public class arrayBuilder {
         }
     }
 
+    // Calculates and prints sum of each column
     public void colSum(int[][] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < rows; j++) {
