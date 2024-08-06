@@ -4,19 +4,21 @@ public class arrayBuilder {
 
     private int rows;
     private int columns;
+
     private Scanner numberScanner = new Scanner(System.in);
+
     private int[][] array;
+
     private int sum = 0;
     private int count = 0;
 
+    private int number = 0;
+
     // Constructor that prints output
     public arrayBuilder() {
-        buildInitialArray();
-        System.out.println("Initial Array: ");
-        printArray(array);
-        System.out.println("");
+        constructArray();
 
-        buildArray1(array);
+        buildArray(array);
         System.out.println("");
         System.out.println("Filled Array: ");
         printArray(array);
@@ -29,19 +31,22 @@ public class arrayBuilder {
     }
 
     // Builds array based on user input
-    public void buildInitialArray() {
+    public void constructArray() {
         System.out.print("How many rows do you want the array to have?: ");
         rows = numberScanner.nextInt();
+
         System.out.print("How many columns do you want the array to have?: ");
         columns = numberScanner.nextInt();
+
         array = new int[rows][columns];
     }
 
-    // Fills array with random numbers
-    public void buildArray1(int[][] array) {
+    // Fills array with user defined numbers
+    public void buildArray(int[][] array) {
         for (int row = 0; row < array.length; row++) {
             for (int col = 0; col < array[row].length; col++) {
-                array[row][col] = (int) (Math.random() * 10);
+                System.out.print("Enter a number to insert in row " + (row + 1) + ", column " + (col + 1));
+                array[row][col] = numberScanner.nextInt();
             }
         }
     }
